@@ -1,0 +1,25 @@
+body{
+margin-left:4em;
+margin-right:4em;
+font-family: sans;
+}
+header{
+padding-bottom:2em;
+padding-top:5em;
+border-bottom: 2px solid black;
+}
+a{
+display: inline-block;
+color: green;
+text-decoration: none;
+padding-left:1em;
+padding-right:1em;
+}
+b{
+font-size: 48px;
+padding-right:2em;
+}
+h1{
+font-weight: normal;
+font-family: serif;
+}
