@@ -5,17 +5,17 @@ align-items: center;
 }
 .gallery{
 list-style-type: none;
-display: flex;
-flex-wrap: wrap;
 align-items: center;
 }
 .gallery li{
 border: 0.4rem black solid;
 padding: 1em;
 background-color: white;
-margin: 1em;
+margin: 0.5em;
 width: fit-content;
 height: fit-content;
+display: inline-block;
+vertical-align: middle;
 }
 img{
 max-width:300px;

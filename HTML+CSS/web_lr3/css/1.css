@@ -1,8 +1,13 @@
+.container{
+margin: auto;
+width: fit-content;
+height: fit-content;
+}
 p{
 width:200px;
 background-color: rgb(65,223,207);
 padding: 1em;
-margin: auto;
 border: 5px solid black;
 border-radius: 1rem;
+margin: 1em;
 }
