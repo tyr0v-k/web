@@ -1,0 +1,79 @@
+body {
+    background-color: rgb(238, 238, 238);
+    font-family: Arial, sans-serif;
+    margin: 5em;
+    margin-left: 12em;
+    margin-right: 12em;
+}
+
+.cards-layout {
+    margin: 2em;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: serif;
+    margin-bottom: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: fit-content;
+    max-width: 18rem;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px 4px 0 0;
+}
+
+.card h3 {
+    font-size: 16px;
+    margin: 20px;
+    margin-bottom: 0;
+    font-weight: normal;
+    color: rgb(66, 66, 66);
+}
+
+.card p {
+    font-size: 14px;
+    color: rgb(66, 66, 66);
+    margin: 20px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    height:100%;
+}
+
+.card a {
+    border-top: 1px solid rgb(66, 66, 66);
+    color: rgb(66, 66, 66);
+    text-decoration: none;
+    display: block;
+    padding:20px;
+}
+
+.masonry {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 110rem;
+    max-width: 50rem;
+    gap: 20px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.flex .card {
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+}
