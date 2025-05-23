@@ -1,0 +1,43 @@
+body {
+    font-family: sans-serif;
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    padding: 20px;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    border: 1px solid lightgrey;
+}
+
+th {
+    background-color: rgb(50,50,50);
+    color: white;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid lightgrey;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid lightgrey;
+}
+
+tbody tr:nth-child(even) {
+    background-color: white;
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        display: table;
+        overflow-x: auto;
+        width: 90%;
+    }
+    th,td{
+        font-size: 12px;
+    }
+}
