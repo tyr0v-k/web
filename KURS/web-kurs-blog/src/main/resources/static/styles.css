@@ -1,0 +1,132 @@
+:root {
+    --main: #44568c;
+    --accent: #6389c4;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    padding: 1em;
+    gap: 1em;
+    margin: 0.5em;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--main);
+    border-bottom: 4px solid var(--accent);
+    color: white;
+    padding-left: 1em;
+}
+
+main {
+    flex: 3;
+}
+
+aside {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border: dashed 0.2em var(--main);
+    border-radius: 15px;
+    box-shadow: 0.5em 1em 0.5em 0em rgba(111, 78, 55, 0.2);
+    padding: 1em;
+}
+
+.article-list h2,
+.article-form h2,
+.archive-section h2 {
+    border-bottom: 4px solid var(--accent);
+    padding-bottom: 0.5em;
+}
+
+article {
+    margin-bottom: 1em;
+}
+
+article h1 {
+    margin: 0 0 0.5em;
+}
+
+article p {
+    margin: 0.3em 0;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.7em;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.4em;
+    border: 2px solid;
+    resize: vertical;
+}
+
+form button {
+    background-color: var(--main);
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    margin-top: 0.5em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.article-list{
+    border: dashed 0.2em var(--main);
+    border-radius: 15px;
+    box-shadow: 0.5em 1em 0.5em 0em rgba(111, 78, 55, 0.2);
+    height: 100%;
+    padding: 1em;
+    margin-right: 1em;
+}
+
+.article-form,
+.archive-section {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.buttons-article {
+    display: flex;
+    margin-left: auto;
+}
+
+button {
+    margin-right: 0.5em;
+    padding: 0.3em 0.8em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: var(--main);
+    color: white;
+}
+
+.delete-btn {
+    background-color: #cf3a15;
+    color: white;
+    margin-left: auto;
+}
+
+.archive-btn {
+    background-color: #515151;
+    color: white;
+}
+
+form button:focus {
+    background-color: var(--accent);
+}
