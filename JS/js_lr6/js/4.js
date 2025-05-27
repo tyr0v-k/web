@@ -4,11 +4,14 @@ function search() {
     let matches = 0;
 
     towns.forEach(town => {
-        if (searchText !== '' && searchText.toLowerCase().includes(town.textContent.toLowerCase())) {
-            matches++;
-            town.style.fontWeight = 'bold';
-            town.style.textDecoration = 'underline';
-        } else {
+        if (searchText !== ''){
+            if (town.textContent.toLowerCase().includes(searchText.toLowerCase()) || searchText.toLowerCase().includes(town.textContent.toLowerCase())) {
+                matches++;
+                town.style.fontWeight = 'bold';
+                town.style.textDecoration = 'underline';
+            } 
+        }
+        else {
             town.style.fontWeight = 'normal';
             town.style.textDecoration = 'none';
         }
