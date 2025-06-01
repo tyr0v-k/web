@@ -1,14 +1,9 @@
-const API_URL = 'http://localhost:8080/blog';
-const form = document.getElementById('articleForm');
-const archive = document.getElementById('archive');
-const articles = document.getElementById('articles');
-
 window.addEventListener('DOMContentLoaded', () => {
     loadBlogArticles();
     loadArchive();
 });
 
-form.addEventListener('submit', function (e) {
+document.getElementById('articleForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
     const newBlogArticle = {
@@ -19,27 +14,27 @@ form.addEventListener('submit', function (e) {
         archived: false
     };
 
-    fetch(API_URL, {
+    fetch('http://localhost:8080/blog', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newBlogArticle)
     }).then(res => res.json()).then(blogArticle => {
         addArticleToPage(blogArticle);
-        form.reset();}).catch(err => console.error('Ошибка создания статьи:', err));
+        document.getElementById('articleForm').reset();}).catch(err => console.error('Ошибка создания статьи:', err));
 });
 
 function loadArchive() {
-    fetch(API_URL + '/archived').then(res => res.json()).then(data => {
-        archive.innerHTML = '';
+    fetch('http://localhost:8080/blog/archived').then(res => res.json()).then(data => {
+        document.getElementById('archive').innerHTML = '';
         data.forEach(blogArticle => {
             const li = document.createElement('li');
             li.textContent = blogArticle.title;
-            archive.appendChild(li);});}).catch(err => console.error('Ошибка загрузки архива:', err));
+            document.getElementById('archive').appendChild(li);});}).catch(err => console.error('Ошибка загрузки архива:', err));
 }
 
 function loadBlogArticles() {
-    fetch(API_URL).then(res => res.json()).then(data => {
-        articles.innerHTML = '';
+    fetch('http://localhost:8080/blog').then(res => res.json()).then(data => {
+        document.getElementById('articles').innerHTML = '';
         data.forEach(addArticleToPage);}).catch(err => console.error('Ошибка загрузки:', err));
 }
 
@@ -62,17 +57,17 @@ function addArticleToPage(blogArticle) {
     delBtn.textContent = 'Удалить';
     delBtn.className = 'delete-btn';
     delBtn.addEventListener('click', () => {
-        fetch(`${API_URL}/${blogArticle.id}`, {
+        fetch(`${'http://localhost:8080/blog'}/${blogArticle.id}`, {
         method: 'DELETE'
         }).then(() => article.remove()).catch(err => console.error('Ошибка удаления:', err));});
 
     const archiveBtn = document.createElement('button');
     archiveBtn.textContent = 'Архив';
     archiveBtn.className = 'archive-btn';
-    archiveBtn.addEventListener('click', () => { fetch(`${API_URL}/archive/${blogArticle.id}`, {method: 'PUT'}).then(() => {
+    archiveBtn.addEventListener('click', () => { fetch(`${'http://localhost:8080/blog'}/archive/${blogArticle.id}`, {method: 'PUT'}).then(() => {
         const li = document.createElement('li');
         li.textContent = blogArticle.title;
-        archive.appendChild(li);
+        document.getElementById('archive').appendChild(li);
         article.remove();
     }).catch(err => console.error('Ошибка архивирования:', err));});
 
@@ -82,5 +77,5 @@ function addArticleToPage(blogArticle) {
     article1.append(archiveBtn);
 
     article.append(h1, p1, p2, p3, article1);
-    articles.appendChild(article);
+    document.getElementById('articles').appendChild(article);
 }
