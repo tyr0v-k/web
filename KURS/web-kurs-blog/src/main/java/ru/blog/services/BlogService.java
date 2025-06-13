@@ -3,7 +3,7 @@ package ru.blog.services;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import ru.blog.dto.BlogArticleDto;
-import ru.blog.models.entities.BlogArticle;
+import ru.blog.models.BlogArticle;
 import ru.blog.repositories.BlogRepository;
 
 import java.util.List;

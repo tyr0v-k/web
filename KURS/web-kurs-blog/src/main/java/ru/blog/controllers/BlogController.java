@@ -1,4 +1,4 @@
-package ru.blog.web;
+package ru.blog.controllers;
 
 import org.springframework.web.bind.annotation.*;
 import ru.blog.dto.BlogArticleDto;

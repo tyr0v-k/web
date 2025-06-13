@@ -1,4 +1,4 @@
-package ru.blog.models.entities;
+package ru.blog.models;
 
 import jakarta.persistence.*;
 
